@@ -1,0 +1,46 @@
+﻿
+@{
+    Layout = null;
+}
+@model CRUDWITHJSONINWCF_Client.ViewModels.ProdductViewModel 
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Edit</title>
+</head>
+<body>
+    @using (Html.BeginForm("Edit", "product"))
+    {
+    <table>
+        <tr>
+            <td>@Html.LabelFor(model => model.product.Id)</td>
+            <td>
+                @Html.ValueFor(model => model.product.Id)
+            @Html.HiddenFor(model => model.product.Id)
+        </td>
+    </tr>
+
+    <tr>
+        <td>@Html.LabelFor(model => model.product.Name)</td>
+        <td>@Html.TextBoxFor(model => model.product.Name)</td>
+    </tr>
+    <tr>
+        <td>@Html.LabelFor(model => model.product.Price)</td>
+        <td>@Html.TextBoxFor(model => model.product.Price)</td>
+    </tr>
+    <tr>
+        <td>@Html.LabelFor(model => model.product.Quantity)</td>
+        <td>@Html.TextBoxFor(model => model.product.Quantity)</td>
+    </tr>
+    <tr>
+        <td colspan="2"></td>
+        <td><input type="button" value="edit" /></td>
+    </tr>
+    </table>
+    }
+</body>
+</html>
